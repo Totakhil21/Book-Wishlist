@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Book Wishlist</h1>
+        <div class="books-list">
+            <% if (books.length === 0) { %>
+                <p>No books added yet.</p>
+            <% } else { %>
+                <% books.forEach(book => { %>
+                    <div class="book-card">
+                        <h3><%= book.title %></h3>
+                        <p><strong>Comment:</strong> <%= book.comment %></p>
+                        <p><strong>Rating:</strong> <%= book.rating %>/5</p>
+                        <p><strong>Added:</strong> <%= book.date %></p>
+                    </div>
+                <% }); %>
+            <% } %>
+        </div>
+        <a href="/" class="back-button">Add Another Book</a>
+    </div>
+</body>
+</html>
